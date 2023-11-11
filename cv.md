@@ -19,7 +19,7 @@ JavaScrip/TypeScript, React, Next JS, Astro JS, CSS/Tailwind, git - GitHub, Netl
 - [IP Searcher](https://github.com/IGOR-RAK/IP-FINDER) - Vanilla JS, Leaflet Maps 
 
 ## 6.Experience
-Various coding tests and projects from courses and freelance work, demonstrating proficiency in:
+Various coding tests and projects from courses and freelance work, demonstrating my proficiency in:
 - React and its ecosystem (Redux, MobX, Context, React Router)
 - REST API development using Headless CMS (Sanity, Strapi) and NodeJS
 - Frontend development with HTML5, CSS3 (SCSS), Tailwind, and Bootstrap 5
