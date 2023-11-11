@@ -1,4 +1,4 @@
-# 1.Igor Rak - Junior JavaScript Developer
+## 1.Igor Rak 
 
 **2.Contact Info:**
 - Email: igorrakzg@gmail.com
