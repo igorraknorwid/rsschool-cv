@@ -14,80 +14,147 @@
         <h1>Igor Rak - Junior JavaScript Developer</h1>
       </header>
 
-      <section>
-        <h2>Contact Info</h2>
+      <nav>
+        <div class="container">
         <ul>
-          <li>Email: <a href="mailto:igorrakzg@gmail.com">igorrakzg@gmail.com</a></li>
-          <li>Facebook: <a href="https://www.facebook.com/igor.rak.184">Igor Rak</a></li>
-          <li>GitHub Profile: <a href="https://github.com/igorraknorwid">igorraknorwid</a></li>
-          <li>Location: Poznań, Poland</li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#summary">Summary</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#code-examples">Code Examples</a></li>
+            <li><a href="#projects">My Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#english">English</a></li>
         </ul>
-      </section>
+      </div>
+      </nav>
 
-      <section>
-        <h2>Summary</h2>
-        <p>
-          Enthusiastic Junior JavaScript Developer inspired by features like
-          React, NextJS, AstroJS, and NodeJS. Eager to contribute to web
-          development projects and be an asset to your company. My goal is to
-          continuously learn and grow, leveraging my passion for coding and
-          problem-solving to deliver high-quality solutions.
-        </p>
-      </section>
+      <main>
+        <section id="contact">
+          <h2>Contact Info</h2>
+          <ul>
+            <li>Email: <a href="mailto:igorrakzg@gmail.com">igorrakzg@gmail.com</a></li>
+            <li>Facebook: <a href="https://www.facebook.com/igor.rak.184">Igor Rak</a></li>
+            <li>GitHub Profile: <a href="https://github.com/igorraknorwid">igorraknorwid</a></li>
+            <li>Location: Poznań, Poland</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Skills</h2>
-        <ul>
-          <li>JavaScript/TypeScript</li>
-          <li>React, Next JS, Astro JS</li>
-          <li>CSS/Tailwind</li>
-          <li>git - GitHub</li>
-          <li>Netlify, Vercel</li>
-          <li>Headless CMS - Sanity, Strapi</li>
-          <li>VSCode</li>
-        </ul>
-      </section>
+        <section id="summary">
+          <h2>Summary</h2>
+          <p>
+            Enthusiastic Junior JavaScript Developer inspired by features like
+            React, NextJS, AstroJS, and NodeJS. Eager to contribute to web
+            development projects and be an asset to your company. My goal is to
+            continuously learn and grow, leveraging my passion for coding and
+            problem-solving to deliver high-quality solutions.
+          </p>
+        </section>
 
-      <section>
-        <h2>Code Examples (LATEST)</h2>
-        <ul>
-          <li><a href="https://github.com/igorraknorwid/astro_cards">Biblio Card App</a> - TypeScript, Astro JS, React, Tailwind, Sanity Lake Api as Backend</li>
-          <li><a href="https://github.com/igorraknorwid/tiling">Web Page for Tiling Company</a> - TypeScript, Astro JS, React, Tailwind</li>
-          <li><a href="https://github.com/igorraknorwid/gao">Commercial Form</a> - React, TypeScript, MobX, SCSS for step by step form</li>
-          <li><a href="https://github.com/IGOR-RAK/IP-FINDER">IP Searcher</a> - Vanilla JS, Leaflet Maps</li>
-        </ul>
-      </section>
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul>
+            <li>JavaScript/TypeScript</li>
+            <li>React, Next JS, Astro JS</li>
+            <li>CSS/Tailwind</li>
+            <li>git - GitHub</li>
+            <li>Netlify, Vercel</li>
+            <li>Headless CMS - Sanity, Strapi</li>
+            <li>VSCode</li>
+          </ul>
+        </section>
 
-      <section>
-        <h2>Experience</h2>
-        <p>
-          Various coding tests and projects from courses and freelance work,
-          demonstrating my proficiency in:
-        </p>
-        <ul>
-          <li>React and its ecosystem (Redux, MobX, Context, React Router)</li>
-          <li>REST API development using Headless CMS (Sanity, Strapi) and NodeJS</li>
-          <li>Frontend development with HTML5, CSS3 (SCSS), Tailwind, and Bootstrap 5</li>
-          <li>Version control using Git and GitHub, including experience with Git Actions for CI/CD</li>
-        </ul>
-      </section>
+        <section id="code-examples">
+          <h2>Code Examples (LATEST)</h2>
+          <div>
+          <pre>
+            <code>        
+?php
 
-      <section>
-        <h2>Education</h2>
-        <ul>
-          <li>Technology Engineer (Foundry) and CAD (SolidWorks) Designer</li>
-          <li>Udemy Course: "Fundamental JavaScript. With Practice and Projects"</li>
-        </ul>
-      </section>
+namespace App\Http\Middleware;
 
-      <section>
-        <h2>English</h2>
-        <p>
-          B2 proficiency level in English with practical experience working in a
-          multilingual environment (Polish, English, German) as a CAD designer.
-        </p>
-      </section>
+use Closure;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\Crypt;
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Auth;
+use App\Models\AdminToken as AdminTokenModel;
+use App\Models\AdminUser;
 
+class AdminToken
+{
+    public function handle(Request $request, Closure $next): Response
+    {
+        $token = $request->cookie('token');
+
+        if ($token) {
+            try {
+                $decryptedToken = Crypt::decryptString($token);
+                $adminToken = AdminTokenModel::where('token', $decryptedToken)->first();
+
+                if ($adminToken) {
+                    $email = Crypt::decryptString($adminToken['crypted_email']);
+                    $employee = AdminUser::where('email', $email)->first();
+                    Auth::guard('admin')->login($employee);
+
+                    return $next($request);
+                }
+
+                return response()->json(['message' => 'Authorization failed'], 500);
+            } catch (DecryptException $e) {
+                return response()->json(['message' => $e], 500);
+            }
+        }
+
+        return $next($request);
+    }
+}
+            </code>
+          </pre>
+          </div>
+        </section>
+
+        <section id="projects">
+          <h2>My projects</h2>
+          <ul>
+            <li><a href="https://github.com/igorraknorwid/astro_cards">Biblio Card App</a> - TypeScript, Astro JS, React, Tailwind, Sanity Lake Api as Backend</li>
+            <li><a href="https://github.com/igorraknorwid/tiling">Web Page for Tiling Company</a> - TypeScript, Astro JS, React, Tailwind</li>
+            <li><a href="https://github.com/igorraknorwid/gao">Commercial Form</a> - React, TypeScript, MobX, SCSS for step by step form</li>
+            <li><a href="https://github.com/IGOR-RAK/IP-FINDER">IP Searcher</a> - Vanilla JS, Leaflet Maps</li>
+          </ul>
+        </section>
+
+        <section id="experience">
+          <h2>Experience</h2>
+          <p>
+            Various coding tests and projects from courses and freelance work,
+            demonstrating my proficiency in:
+          </p>
+          <ul>
+            <li>React and its ecosystem (Redux, MobX, Context, React Router)</li>
+            <li>REST API development using Headless CMS (Sanity, Strapi) and NodeJS</li>
+            <li>Frontend development with HTML5, CSS3 (SCSS), Tailwind, and Bootstrap 5</li>
+            <li>Version control using Git and GitHub, including experience with Git Actions for CI/CD</li>
+          </ul>
+        </section>
+
+        <section id="education">
+          <h2>Education</h2>
+          <ul>
+            <li>Technology Engineer (Foundry) and CAD (SolidWorks) Designer</li>
+            <li>Udemy Course: "Fundamental JavaScript. With Practice and Projects"</li>
+          </ul>
+        </section>
+
+        <section id="english">
+          <h2>English</h2>
+          <p>
+            B2 proficiency level in English with practical experience working in a
+            multilingual environment (Polish, English, German) as a CAD designer.
+          </p>
+        </section>
+      </main>
       <footer>
         <div class="footer_box">
           <div><a href="https://github.com/igorraknorwid">My GitHub</a></div>

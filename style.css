@@ -4,6 +4,7 @@ body {
     background-color: #333;
     font-family: Montserrat, sans-serif;
     color: rgb(240, 240, 240);
+    scroll-behavior: smooth;
 }   
   
 footer {
@@ -57,3 +58,29 @@ footer {
     max-width: 100%;
     height: auto;
   }
+
+  /* Navigation styles */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
