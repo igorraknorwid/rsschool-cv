@@ -1,3 +1,3 @@
 https://igorraknorwid/rsschool-cv/cv
 
-https://igorraknorwid.github.io/rsschool-cv/
+https://igorraknorwid.github.io/rsschool-cv/cv
