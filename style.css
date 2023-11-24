@@ -1,0 +1,59 @@
+/* style.css */
+
+body {
+    background-color: #333;
+    font-family: Montserrat, sans-serif;
+    color: rgb(240, 240, 240);
+}   
+  
+footer {
+    margin: 10px 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px 20px;
+    box-sizing: border-box;
+  }
+  h1,
+  h2,
+  h3 {
+    color: rgb(214, 251, 65);
+    font-weight: bold;
+  }
+  
+  h1 {
+    font-size: 4em; /* Adjust the base font size */
+  }
+  
+  a {
+    color: rgb(106, 92, 92);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #fbc941;
+    text-decoration: underline;
+  }
+  
+  .logo_box {
+    background-color: blanchedalmond;
+    padding: 5px;
+    border-radius: 10px;
+  }
+  .footer_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .footer_box div {
+    margin: 10px 0;
+    text-align: center;
+  }
+  
+  .logo_box img {
+    max-width: 100%;
+    height: auto;
+  }
