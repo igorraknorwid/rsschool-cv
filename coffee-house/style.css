@@ -1,99 +1,5 @@
+@import url("reset.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-/* Basic CSS Reset */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  font-size: 100%;
-  vertical-align: baseline;
-  box-sizing: border-box;
-}
-
-body {
-  line-height: 1;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-/* Remember to define focus styles! */
-:focus {
-  outline: 0;
-}
-
-/* Remove default margin and padding on certain elements */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 
 body {
   font-family: "Inter", sans-serif;
@@ -101,12 +7,77 @@ body {
   color: #403f3d;
 }
 
+p {
+  line-height: 150%;
+}
+
 .container {
   max-width: 1440px;
   margin: 0 auto;
   padding: 0 40px;
   box-sizing: border-box;
-  border: 2px solid red;
+}
+
+.heading-1 {
+  font-size: 72px;
+  font-weight: 600;
+  line-height: 115%;
+}
+.heading-1.accent {
+  font-style: italic;
+}
+
+.heading-2 {
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 115%;
+}
+
+.heading-2.accent {
+  font-style: italic;
+}
+
+.text-dark {
+  color: #403f3d;
+}
+
+.text-light {
+  color: #e1d4c9;
+}
+
+.text-accent {
+  color: #b0907a;
+}
+
+.button-primary {
+  padding: 20px 78px;
+  font-size: 16px;
+  line-height: 150%;
+  background-color: #e1d4c9;
+  border-radius: 100px;
+  font-weight: 600;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.cup {
+  display: none;
+  transition: all 0.5s ease;
+}
+
+.button-primary:hover .cup {
+  display: block;
+}
+
+.button-primary:hover {
+  padding: 20px 64px;
 }
 
 .header-menu {
@@ -174,4 +145,20 @@ body {
   text-decoration: none;
   color: #403f3d;
   display: block;
+}
+
+.hero {
+  height: 644px;
+  border-radius: 40px;
+  background-image: url("./images/img-hero.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  padding: 100px;
+}
+.offer {
+  width: 530px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
 }
