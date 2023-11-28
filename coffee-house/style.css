@@ -258,3 +258,20 @@ p {
 .slider_indicator.active {
   background-color: var(--border-dark);
 }
+
+/* About Grid component */
+.about {
+  margin: 40px 0;
+  display: flex;
+  column-gap: 40px;
+}
+
+.about div {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+.about img {
+  border-radius: 20px;
+  object-fit: cover;
+}
