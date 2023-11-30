@@ -135,8 +135,16 @@ p {
   column-gap: 40px;
 }
 
-.header-menu nav li:hover {
-  text-decoration: underline;
+nav ul li {
+  transition: all 0.3s ease;
+}
+
+.main_menu li {
+  transition: all 0.3s ease;
+}
+
+.main_menu li:hover {
+  transform: scale(110%);
 }
 
 .logo_link {
@@ -218,10 +226,19 @@ p {
   text-align: left;
   left: 0;
 }
-.arrow img {
+.arrow .arrow_svg {
   cursor: pointer;
 }
 
+.arrow .arrow_svg:hover {
+  fill: var(--border-dark);
+}
+.arrow .arrow_svg:hover path {
+  stroke: var(--primary-bg-color);
+}
+.arrow .arrow_svg:hover rect {
+  stroke: var(--primary-bg-color);
+}
 .slider-track_box {
   /* background-color: aqua; */
   position: relative;
@@ -466,10 +483,23 @@ p {
 /* Menu Grid */
 .menu_grid {
   display: grid;
-  gap: 40px;
-  grid-template-columns: repeat(4, 1fr);
+  row-gap: 40px;
+  grid-template-columns: repeat(4, 310px);
   max-width: 1440px;
   margin: 0 auto;
+  justify-content: space-between;
+}
+@media (max-width: 1440px) {
+  .menu_grid {
+    grid-template-columns: repeat(3, 310px);
+  }
+}
+
+@media (max-width: 1080px) {
+  .menu_grid {
+    grid-template-columns: repeat(2, 310px);
+    justify-content: space-around;
+  }
 }
 
 .menu_grid .card {
