@@ -194,6 +194,12 @@ nav ul li {
   border-bottom: 2px solid var(--dark-color);
 }
 
+.header-right-menu:hover.disactivated {
+  border-bottom: 2px solid var(--primary-bg-color);
+  cursor: not-allowed;
+}
+ed
+
 .header-right-menu a {
   text-decoration: none;
   color: var(--dark-color);
@@ -433,7 +439,18 @@ nav ul li {
   row-gap: 16px;
 }
 
-.contact-info li {
+.contact-info li a {
+  color: var(--primary-bg-color);
+  display: flex;
+  column-gap: 8px;
+  cursor: pointer;
+  width: fit-content;
+  border-bottom: 2px solid var(--border-dark);
+  transition: all 0.3 ease;
+}
+
+.contact-info li  {
+  color: var(--primary-bg-color);
   display: flex;
   column-gap: 8px;
   cursor: pointer;
@@ -485,6 +502,7 @@ nav ul li {
   border: 1px solid var(--border-dark);
   background-color: var(--border-dark);
   color: var(--primary-bg-color);
+  cursor: not-allowed;
 }
 
 .offer_tab button:hover .offer_image_container {

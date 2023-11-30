@@ -31,8 +31,8 @@
           <nav>
             <ul>
               <li>
-                <a href="/coffee-house/menu.html">
-                  <div class="header-right-menu">
+                <a href="/coffee-house/menu.html" title="You are on Menu Page already">
+                  <div class="header-right-menu disactivated">
                     <p>Menu</p>
                     <img
                       src="images/coffee-cup.svg"
@@ -50,7 +50,7 @@
     </header>
 
     <main>
-      <section class="menu_offer">
+      <section class="menu menu_offer">
         <h2 class="heading-2 center mw_800">
           Behind each of our cups hides an
           <span class="text-accent">amazing surprise</span>
@@ -58,42 +58,42 @@
         <nav class="offer_tab mt_40">
           <ul>
             <li>
-              <button class="active">
-                <div class="offer_image_container">
+              <button class="active" disabled>
+                <span class="offer_image_container">
                   <img
                     src="images/menu_coffee.png"
                     alt="Left Slider Arrow"
                     width="17"
                     height="17"
                   />
-                </div>
-                <div>Coffee</div>
+                </span>
+                <span>Coffee</span>
               </button>
             </li>
             <li>
-              <button>
-                <div class="offer_image_container">
+              <button >
+                <span class="offer_image_container">
                   <img
                     src="images/menu_tea.png"
                     alt="Left Slider Arrow"
                     width="17"
                     height="17"
                   />
-                </div>
-                <div>Tea</div>
+                </span>
+                <span>Tea</span>
               </button>
             </li>
             <li>
               <button>
-                <div class="offer_image_container">
+                <span class="offer_image_container">
                   <img
                     src="images/menu_dessert.png"
                     alt="Left Slider Arrow"
                     width="17"
                     height="17"
                   />
-                </div>
-                <div>Dessert</div>
+                </span>
+                <span>Dessert</span>
               </button>
             </li>
           </ul>
@@ -354,6 +354,7 @@
             <h3 class="heading-3">Contact us</h3>
             <ul class="contact-info">
               <li>
+                <a href="https://www.google.com/maps/search/?api=1&query=8558+Green+Rd.%2C+LA" target="_blank">
                 <svg
                   width="20"
                   height="20"
@@ -376,8 +377,10 @@
                   />
                 </svg>
                 <p>8558 Green Rd., LA</p>
+              </a>
               </li>
               <li>
+                <a href="tel:+16035550123">
                 <svg
                   width="20"
                   height="20"
@@ -394,6 +397,7 @@
                   />
                 </svg>
                 <p>+1 (603) 555-0123</p>
+              </a>
               </li>
               <li>
                 <svg
@@ -426,8 +430,7 @@
                   </defs>
                 </svg>
                 <p>Mon-Sat: 9:00 AM – 23:00 PM</p>
-              </li>
-              <div></div>
+              </li>            
             </ul>
           </div>
         </div>
