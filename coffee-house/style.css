@@ -475,7 +475,17 @@ nav ul li {
   color: var(--primary-bg-color);
 }
 
+.offer_tab button.active {
+  border: 1px solid var(--border-dark);
+  background-color: var(--border-dark);
+  color: var(--primary-bg-color);
+}
+
 .offer_tab button:hover .offer_image_container {
+  background-color: var(--primary-bg-color);
+}
+
+.offer_tab button.active .offer_image_container {
   background-color: var(--primary-bg-color);
 }
 
