@@ -12,6 +12,9 @@
   --border-dark: #665f55;
   --border-light: #c1b6ad;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Inter", sans-serif;
@@ -40,6 +43,10 @@ p {
 }
 .mt_40 {
   margin-top: 40px;
+}
+
+.mt_100 {
+  margin-top: 100px;
 }
 
 .text-center {
@@ -118,13 +125,22 @@ p {
 }
 
 /* Menu */
+.fixed_top_box {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 99;
+}
+
 .header-menu {
-  margin: 20px 0;
+  padding: 20px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
   line-height: 100%;
   font-size: 16px;
+  background-color: var(--primary-bg-color);
   color: var(--nav-text-color);
 }
 

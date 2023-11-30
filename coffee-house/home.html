@@ -8,8 +8,9 @@
   </head>
   <body>
     <header>
+      <div class="fixed_top_box">
       <div class="container">
-        <div class="header-menu">
+        <div class="header-menu ">          
           <a class="logo_link" href="/coffee-house/home.html">
             <img
               src="images/logo.png"
@@ -21,10 +22,10 @@
 
           <nav>
             <ul class="main_menu">
-              <li><a href="/coffee-house/home.html">Favorite coffee</a></li>
-              <li><a href="/coffee-house/home.html">About</a></li>
-              <li><a href="/coffee-house/home.html">Mobile app</a></li>
-              <li><a href="/coffee-house/home.html">Contact us</a></li>
+              <li><a href="#favorite_coffee">Favorite coffee</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#mobile_app">Mobile app</a></li>
+              <li><a href="#contact">Contact us</a></li>
             </ul>
           </nav>
 
@@ -46,7 +47,10 @@
             </ul>
           </nav>
         </div>
-        <div class="hero">
+      </div>
+    </div>
+      <div class="container">
+        <div class="hero mt_100">          
           <div class="offer">
             <h1 class="heading-1 text-light">
               <span class="text-accent">Enjoy</span> premium coffee at our charming cafe
@@ -68,11 +72,12 @@
             /></a>
           </div>
         </div>
-      </div>
+        </div>
+      
     </header>
 
     <main>
-      <section class="container gap">
+      <section id="favorite_coffee" class="container gap">
         <h2 class="heading-2 center">
           Choose your <span class="text-accent">favorite</span> coffee
         </h2>
@@ -145,7 +150,7 @@
         </div>
       </section>
 
-      <section class="container gap">
+      <section id="about" class="container gap">
         <h2 class="heading-2">
           Resource is
           <span class="text-accent">the perfect and cozy place</span> where you
@@ -183,7 +188,7 @@
           </div>
         </div>
       </section>
-      <section class="container gap">
+      <section id="mobile_app" class="container gap">
         <div class="mobile_app">
          
             <div class="mobile_app-content">
@@ -252,7 +257,7 @@
 
           </div>
         </div>
-        <div>
+        <section id="contact">
           <h3 class="heading-3">Contact us</h3>
           <ul class="contact-info">
           <li><svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -276,7 +281,7 @@
             </svg><p>Mon-Sat: 9:00 AM – 23:00 PM</p></li>
           <div></div>
         </ul>
-        </div>
+        </section>
         </div>
       </div>
     </footer>
