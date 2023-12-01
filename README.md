@@ -1,3 +1,3 @@
-https://igorraknorwid/rsschool-cv/cv
+https://igorraknorwid.github.io/coffee-house/home.html
+https://igorraknorwid.github.io/coffee-house/menu.html
 
-https://igorraknorwid.github.io/rsschool-cv/cv
